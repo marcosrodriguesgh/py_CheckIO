@@ -1,8 +1,6 @@
 
 
-str = u'blá'
+lista = [1, 2, 3, 4]
+lista2 = [1, 2]
 
-print(ascii(str[2]))
-print(ascii('á'))
-print(ascii('a'))
-print('a'.isascii())
+print(lista - lista2)
