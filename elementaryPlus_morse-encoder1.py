@@ -13,11 +13,14 @@ MORSE = {'a': '.-',    'b': '-...',  'c': '-.-.',
         }
 
 def morse_encoder(text):
-    morse = ''
-    for i in text:
-        morse += MORSE[i.lower()] + ' ' if i != ' ' else '  '
-    return morse[:-1]
+    # My first version
+    # morse = ''
+    # for i in text:
+    #     morse += MORSE[i.lower()] + ' ' if i != ' ' else '  '
+    # return morse[:-1]
 
+    # My improved version
+    return ' '.join([' ' if i == ' ' else MORSE[i.lower()] for i in text])
 
 if __name__ == '__main__':
     print("Example:")
