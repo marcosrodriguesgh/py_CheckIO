@@ -6,20 +6,15 @@ def frequency_sort(items):
             dic.update({i: 1})
         else:
             dic.update({i: dic[i] + 1})
-    while len(dic) > 0:
-
-        for k, v in dic.items():
-            if v == max(dic.values()):
-                chave = k
-                for r in range(v):
-                    tup.append(k)
-        del dic[chave]
+    for x in sorted(dic.items(), key=lambda t: t[1], reverse=True):
+        for _ in range(x[1]):
+            tup.append(x[0])
     return tup
 
 
 if __name__ == '__main__':
     print("Example:")
-    print(frequency_sort([4, 6, 2, 2, 6, 4, 4, 4]))
+    print(frequency_sort([4, 6, 2, 2, 2, 6, 4, 4, 4]))
     #print(frequency_sort([4, 6, 2, 2, 2, 6, 4, 4, 4]))
 
     # These "asserts" are used for self-checking and not for an auto-testing
