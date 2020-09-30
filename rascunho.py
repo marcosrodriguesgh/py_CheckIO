@@ -1,6 +1,6 @@
 
 
-lista = [1, 2, 3, 4]
-lista2 = [1, 2]
+lista = [1, 2, 1, 4]
+sete = set(lista)
 
-print(lista - lista2)
+print(sete)
