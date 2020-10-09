@@ -1,33 +1,21 @@
 def checkio(line: str) -> str:
     Vowels = 'AEIOUY'
     Consonants = 'BCDFGHJKLMNPQRSTVWXZ'
-    testV = line[0] in Vowels
-    testC = line[0] in Consonants
-    testO = num = 0
-    for i, l in enumerate(line.upper()):
-        if l in Vowels and i > 0:
-            testV += 1
-            testC -= 1
-            testO = 0
-            if testV == 2 or testC == 2:
-                testV = testC = 0
-                pass
-        elif l in Consonants:
-            testV -= 1
-            testC += 1
-            testO = 0
-            if testV == 2 or testC == 2:
-                testV = testC = 0
-                pass
+    cont = 0
+    newline = ''
+    for c in line:
+        if c.upper() in Vowels:
+            newline += 'a'
+        elif c.upper() in Consonants:
+            newline += 'b'
+        elif not c.isalnum():
+            newline += ' '
         else:
-            testO += 1
-            if -1 < testC <= 1 and -1 < testV <= 1 and testO == 1:
-                num += 1
-                testV = testC = 0
-
-        print('letra = ', l, 'testV = ', testV, 'testC = ', testC)
-    print(num)
-    return num
+            newline += c
+    for word in newline.split():
+        if 'aa' not in word and 'bb' not in word and word.isalpha() and len(word)>1:
+            cont += 1
+    return cont
 
 
 if __name__ == '__main__':
